@@ -1,0 +1,18 @@
+apiVersion: skaffold/v3
+kind: Config
+metadata:
+  name: mysql-operator
+build:
+  artifacts:
+    - image: mysql-operator # this needs to be same as image specified in config/manager/kustomization.yaml
+      context: ..
+      docker:
+        dockerfile: Dockerfile
+  local:
+    push: false
+    useDockerCLI: true
+manifests:
+  kustomize:
+    paths:
+      - ../config/crd
+      - ../config/default

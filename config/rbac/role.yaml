@@ -1,0 +1,101 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - secrets
+  verbs:
+  - create
+  - get
+  - list
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+  - update
+- apiGroups:
+  - mysql.nakamasato.com
+  resources:
+  - mysqldbs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mysql.nakamasato.com
+  resources:
+  - mysqldbs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - mysql.nakamasato.com
+  resources:
+  - mysqldbs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - mysql.nakamasato.com
+  resources:
+  - mysqls
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mysql.nakamasato.com
+  resources:
+  - mysqls/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - mysql.nakamasato.com
+  resources:
+  - mysqls/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - mysql.nakamasato.com
+  resources:
+  - mysqlusers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - mysql.nakamasato.com
+  resources:
+  - mysqlusers/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - mysql.nakamasato.com
+  resources:
+  - mysqlusers/status
+  verbs:
+  - get
+  - patch
+  - update

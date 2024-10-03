@@ -1,0 +1,17 @@
+namespace: mysql-operator-system
+namePrefix: mysql-operator-
+
+resources:
+- manager.yaml
+- ../crd
+- ../rbac
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+images:
+- name: controller
+  newName: ghcr.io/nakamasato/mysql-operator
+  newTag: v0.4.1

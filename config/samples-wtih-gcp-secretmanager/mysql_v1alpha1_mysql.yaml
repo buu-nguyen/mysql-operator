@@ -1,0 +1,12 @@
+apiVersion: mysql.nakamasato.com/v1alpha1
+kind: MySQL
+metadata:
+  name: mysql-sample
+spec:
+  host: localhost
+  adminUser:
+    name: root
+    type: raw
+  adminPassword: # echo -n "password" | gcloud secrets create mysql-password --data-file=-
+    name: mysql-password
+    type: gcp

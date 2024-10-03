@@ -1,0 +1,12 @@
+apiVersion: mysql.nakamasato.com/v1alpha1
+kind: MySQL
+metadata:
+  name: mysql-sample
+spec:
+  host: "127.0.0.1" # auth SQL proxy
+  adminUser:
+    name: root
+    type: raw
+  adminPassword: # stored in GCP SecretMamanger
+    name: mysql-password
+    type: gcp

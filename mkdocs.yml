@@ -1,0 +1,34 @@
+site_name: MySQL Operator
+theme:
+  name: material
+  palette:
+    primary: cyan
+  features:
+    - header.autohide
+    - navigation.instant
+    - navigation.tabs
+    - navigation.indexes
+  icon:
+    repo: fontawesome/brands/github
+repo_url: https://github.com/nakamasato/mysql-operator
+extra:
+  analytics:
+    provider: google
+    property: G-9NTB93RVPJ
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.magiclink
+  - pymdownx.tasklist:
+      custom_checkbox: true
+nav:
+  - Home: 'index.md'
+  - 'Developer Guide':
+    - 'API Resources': 'developer-guide/api-resources.md'
+    - 'Reconciliation': 'developer-guide/reconciliation.md'
+    - 'Testing': 'developer-guide/testing.md'
+    - 'Debug': 'developer-guide/debug.md'
+    - 'Versions': 'developer-guide/versions.md'
+  - Usage:
+    - 'Install with Helm': usage/install-with-helm.md
+    - 'GCP SecretManager': usage/gcp-secretmanager.md
+    - 'Schema Migration': usage/schema-migration.md

@@ -1,0 +1,26 @@
+# More info: https://docs.docker.com/engine/reference/builder/#dockerignore-file
+# Ignore build and test binaries.
+bin/
+testbin/
+
+# ignore git files
+.git/
+.gitignore
+.github/
+
+# ignore docker-compose files
+docker-compose.*.yml
+
+# ignore environment files
+.env*
+
+# ignore document files
+.docs/
+*.md
+
+# ignore editor settings
+.idea/
+.vscode/
+
+# ignore log files
+*.log
